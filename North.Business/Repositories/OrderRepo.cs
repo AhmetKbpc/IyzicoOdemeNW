@@ -4,9 +4,9 @@ using North.Data;
 
 namespace North.Business.Repositories;
 
-public class ProductRepo : RepositoryBase<Product, int>
+public class OrderRepo : RepositoryBase<Order, int>
 {
-    public ProductRepo(NorthwindContext context) : base(context)
+    public OrderRepo(NorthwindContext context) : base(context)
     {
     }
 }

@@ -1,16 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using North.Business.Repositories.Abstracts;
 using North.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace North.Business.Repositories.Abstracts.EntityFrameworkCore
 {
     public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey>
-        where TKey : IEnumerable<TKey>
+        where TKey : IEquatable<TKey>
         where TEntity : class
     {
         protected readonly NorthwindContext _context;
@@ -25,7 +21,6 @@ namespace North.Business.Repositories.Abstracts.EntityFrameworkCore
         {
             return predicate == null ? _table : _table.Where(predicate);
         }
-
         public virtual TEntity GetById(TKey id)
         {
             return _table.Find(id);

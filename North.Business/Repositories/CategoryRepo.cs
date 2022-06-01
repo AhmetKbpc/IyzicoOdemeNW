@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using North.Business.Repositories.Abstracts.EntityFrameworkCore;
+using North.Core.Entities;
+using North.Data;
 
 namespace North.Business.Repositories
 {
-    internal class CategoryRepo
+    public class CategoryRepo : RepositoryBase<Category, int>
     {
+        public CategoryRepo(NorthwindContext context) : base(context)
+        {
+        }
     }
 }
