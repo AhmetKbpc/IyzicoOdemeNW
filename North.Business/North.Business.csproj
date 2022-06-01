@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Iyzipay" Version="2.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\North.Data\North.Data.csproj" />
   </ItemGroup>
 
